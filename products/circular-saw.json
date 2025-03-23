@@ -1,0 +1,13 @@
+{
+    "name": "Circular Saw",
+    "description": "Corded circular saw for making precise cuts in wood and other materials.",
+    "price": {
+      "daily": 25.00,
+      "weekly": 125.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=Circular+Saw&font=Montserrat",
+    "tags": ["woodworking", "construction", "diy"],
+    "manufacturer": "Makita",
+    "model": "XSR01Z",
+    "batteryType": "Lithium-Ion"
+}

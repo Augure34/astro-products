@@ -1,0 +1,13 @@
+{
+    "name": "Cordless Drill",
+    "description": "Powerful cordless drill for various drilling and screw-driving tasks.",
+    "price": {
+      "daily": 15.00,
+      "weekly": 75.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=Cordless+Drill&font=Montserrat",
+    "tags": ["woodworking", "construction", "diy"],
+    "manufacturer": "DeWalt",
+    "model": "DCD791B",
+    "batteryType": "Lithium-Ion"
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Leaf Blower",
+    "description": "Electric leaf blower for quick and easy cleanup of leaves and debris.",
+    "price": {
+      "daily": 20.00,
+      "weekly": 100.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=Leaf+Blower&font=Montserrat",
+    "tags": ["gardening", "outdoor", "cleanup"],
+     "manufacturer": "Ego",
+    "model": "LB5804",
+    "batteryType": "Lithium-Ion"
+}
