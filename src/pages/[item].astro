@@ -1,0 +1,28 @@
+---
+import Hero from "@/components/landing/Hero.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ContactForm from "../components/landing/Contact.astro";
+
+const { item } = Astro.params;
+
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const woodworking = await getCollection("woodworking");
+  const gardening = await getCollection("gardening");
+  const metalworking = await getCollection("metalworking");
+
+  const allItems = [...woodworking, ...gardening, ...metalworking];
+
+  return allItems.map((item) => ({
+    params: { item: item.id },
+    props: { entry: item }, // Pass the entry as a prop
+  }));
+}
+
+---
+
+<BaseLayout>
+    <Hero />
+    <ContactForm itemId={item} />
+</BaseLayout>

@@ -1,7 +1,7 @@
 {
-  "$ref": "#/definitions/tools",
+  "$ref": "#/definitions/metalworking",
   "definitions": {
-    "tools": {
+    "metalworking": {
       "type": "object",
       "properties": {
         "name": {
@@ -30,12 +30,6 @@
           "type": "string",
           "format": "uri"
         },
-        "tags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
         "manufacturer": {
           "type": "string"
         },
@@ -44,6 +38,12 @@
         },
         "batteryType": {
           "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "$schema": {
           "type": "string"
@@ -54,7 +54,6 @@
         "description",
         "price",
         "image",
-        "tags",
         "manufacturer",
         "model"
       ],

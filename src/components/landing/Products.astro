@@ -1,73 +1,83 @@
 ---
-import { Image } from 'astro:assets';
-import { getCollection} from 'astro:content';
-import ProductTag from './ProductTag.astro';
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 
-const tools = await getCollection('tools');
-let displayedTools = tools;
-// Extract all tags from the collection items
-const allTags = tools.flatMap((tool) => tool.data.tags || []); // handle cases where tags might be undefined or null
+const collections = {
+  woodworking: await getCollection("woodworking"),
+  gardening: await getCollection("gardening"),
+  metalworking: await getCollection("metalworking"),
+};
 
-// Get unique tags using a Set
-const uniqueTags = [...new Set(allTags)];
-
-function handleTagSelection(selectedTag: string) {
-  console.log(`Tag clicked: ${selectedTag}`);
-  displayedTools = tools.filter(tool => tool.data.tags.includes(selectedTag));
-}
 ---
 
 <main class="bg-gray-900">
   <div class="relative mx-auto px-8 max-w-7xl py-12 md:px-12">
     {
-      uniqueTags.map((tag) => (
-        <span>
-          <ProductTag text={tag} onTagClick={handleTagSelection}/>
-        </span>
-      ))
-    }
-    <div class="grid grid-cols-1 gap-6 lg:gap-y-32 md:grid-cols-2 lg:grid-cols-3">
-      {displayedTools.map((tool) => {
+      Object.entries(collections).map(([collectionName, collectionItems]) => {
         return (
-        <figure>
-          <Image
-            class="w-full rounded-3xl shadow-2xl object-cover aspect-[4/3]"
-            src={tool.data.image}
-            alt={tool.data.name}
-            width={400}
-            height={300}
-          />
-          <div class="mt-4 flex justify-between px-6">
-            <div>
-              <h3 class="text-sm text-negroni-500">
-                {/* <a href={`/tools/${tool.id}`}>
-                  <span aria-hidden="true" class="absolute inset-0"></span>
-                  {tool.data.name}
-                </a> */}
-              </h3>
-              <p class="mt-1 text-lg font-medium leading-6 text-white">
-                {tool.data.description}
-              </p>
-              <p class="mt-2 text-sm text-gray-400">
-                Manufacturer: {tool.data.manufacturer}
-              </p>
-              <p class="mt-1 text-sm text-gray-400">
-                Model: {tool.data.model}
-              </p>
-               <p class="mt-1 text-sm text-gray-400">
-                Battery: {tool.data.batteryType}
-              </p>
+          <div class="mt-8">
+            <h2 class="text-2xl font-bold text-yellow-600 mb-8 capitalize collection-title">
+              {collectionName}
+            </h2>
+            <div class="grid grid-cols-1 gap-6 lg:gap-y-32 md:grid-cols-2 lg:grid-cols-3">
+              {collectionItems.map((item) => (
+                <figure
+                  key={item.id}
+                  data-item={JSON.stringify(item)}
+                  class="product-figure"
+                >
+                  <Image
+                    class="w-full rounded-3xl shadow-2xl object-cover aspect-[4/3]"
+                    src={item.data.image}
+                    alt={item.data.name}
+                    width={400}
+                    height={300}
+                  />
+                  <div class="mt-4 px-6">
+                    <p class="mt-1 text-lg font-medium leading-6 text-white">
+                      {item.data.description}
+                    </p>
+                    <div class="flex justify-between">
+                      <div>
+                        <p class="mt-2 text-sm text-gray-400">
+                          Marque: {item.data.manufacturer}
+                        </p>
+                        <p class="mt-1 text-sm text-gray-400">
+                          Modèle: {item.data.model}
+                        </p>
+                      </div>
+                      <div>
+                        <p class="text-sm  text-yellow-600 mt-2 text-right">
+                          Journée: ${item.data.price.daily}
+                        </p>
+                        <p class="text-sm  text-yellow-600 mt-1 text-right">
+                          Semaine: ${item.data.price.weekly}
+                        </p>
+                      </div>
+                    </div>
+                    <a href={`/${item.id}`} class="mt-4 w-full rounded-md bg-yellow-500 text-black py-2 font-semibold hover:bg-yellow-600 transition-colors duration-200 text-center block">
+                    Me réserver
+                  </a>
+                  </div>
+                </figure>
+              ))}
             </div>
-            <p class="text-base text-yellow-600">
-              Daily: ${tool.data.price.daily}
-            </p>
-            <p class="text-base text-yellow-600">
-              Weekly: ${tool.data.price.weekly}
-            </p>
           </div>
-        </figure>
-        )
-      })}
-    </div>
+        );
+      })
+    }
   </div>
 </main>
+
+<style>
+/*   figure {
+    cursor: pointer;
+  } */
+
+  .collection-title {
+    text-align: center;
+    letter-spacing: 0.1em;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+</style>

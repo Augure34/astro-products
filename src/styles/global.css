@@ -3,36 +3,60 @@
 :root {
   /* Typography */
   font-feature-settings: "liga" 1, "calt" 1,
-    /* Contextual Alternates */ "dlig" 1, /* Discretionary Ligatures */ "ss07" 1,
-    /* fSquare punctuation */ "ss08" 1, /* Square quotes */ "zero" 1,
-    /* Slashed zero */ "tnum" 1, /* Tabular numbers */ "cv03" 1,
-    /* Open six */ "cv04" 1, /* Open nine */ "cv01" 1,
-    /* Alternate one */ "cv09", /* Flat-top three */ "cv02" 1; /* Open 4 */
+    /* Contextual Alternates */
+    "dlig" 1,
+    /* Discretionary Ligatures */
+    "ss07" 1,
+    /* fSquare punctuation */
+    "ss08" 1,
+    /* Square quotes */
+    "zero" 1,
+    /* Slashed zero */
+    "tnum" 1,
+    /* Tabular numbers */
+    "cv03" 1,
+    /* Open six */
+    "cv04" 1,
+    /* Open nine */
+    "cv01" 1,
+    /* Alternate one */
+    "cv09",
+    /* Flat-top three */
+    "cv02" 1;
+  /* Open 4 */
   font-family: Inter, sans-serif;
   font-variant-numeric: tabular-nums;
 
   /* Palette from D00000, FFBA08, 3F88C5, 032B43 */
+
+  --ac-primary: #0d47a1;
+  /* New primary color */
+  --ac-secondary: #fbc02d;
+  /* New secondary color */
 
   /* Red (D00000) */
   --color-red-50: #ffebee;
   --color-red-100: #ffcdd2;
   --color-red-200: #ef9a9a;
   --color-red-300: #e57373;
+  /* Default */
   --color-red-400: #ef5350;
-  --color-red-500: #d00000; /* Default */
+  --color-red-500: #d00000;
   --color-red-600: #c62828;
   --color-red-700: #b71c1c;
   --color-red-800: #d32f2f;
   --color-red-900: #880e4f;
-  
+
   /* Yellow (FFBA08) */
   --color-yellow-50: #fffde7;
   --color-yellow-100: #fff9c4;
   --color-yellow-200: #fff59d;
   --color-yellow-300: #fff176;
   --color-yellow-400: #fffb8a;
-  --color-yellow-500: #FFBA08; /* Default */
+  --color-yellow-500: #FFBA08;
+  /* Default */
   --color-yellow-600: #fbc02d;
+  /* Default */
   --color-yellow-700: #f9a825;
   --color-yellow-800: #f57f17;
   --color-yellow-900: #ff6f00;
@@ -43,11 +67,12 @@
   --color-blue-200: #90caf9;
   --color-blue-300: #64b5f6;
   --color-blue-400: #42a5f5;
-  --color-blue-500: #3F88C5; /* Default */
+  --color-blue-500: #3F88C5;
   --color-blue-600: #1e88e5;
   --color-blue-700: #1976d2;
   --color-blue-800: #1565c0;
   --color-blue-900: #0d47a1;
+  /* Default */
 
   /* Dark Blue (032B43) */
   --color-dark-blue-50: #e0e8eb;
@@ -55,7 +80,8 @@
   --color-dark-blue-200: #8096a3;
   --color-dark-blue-300: #4d6a7b;
   --color-dark-blue-400: #26485d;
-  --color-dark-blue-500: #032B43; /* Default */
+  --color-dark-blue-500: #032B43;
+  /* Default */
   --color-dark-blue-600: #022439;
   --color-dark-blue-700: #021e31;
   --color-dark-blue-800: #011829;
@@ -63,6 +89,7 @@
 }
 
 @supports (font-variation-settings: normal) {
+
   /* Use variable font if supported */
   :root {
     font-family: InterVariable, sans-serif;
