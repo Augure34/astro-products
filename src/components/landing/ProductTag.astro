@@ -1,0 +1,53 @@
+---
+interface Props {
+  text: string;
+  onTagClick: (clickedText: string) => void; // Expose the callback
+}
+
+const { text, onTagClick } = Astro.props;
+---
+
+<category-filter>
+  <button class="tag">
+    {text}
+  </button>
+</category-filter>
+
+<script>
+  class CategoryFilter extends HTMLElement {
+    constructor() {
+      super();
+
+      const button = this.querySelector('button')!;
+      const onTagClick = this.getAttribute('onTagClick'); // Get the callback as a string.
+
+      button.addEventListener('click', () => {
+        const clickedText = button.textContent;
+        // Evaluate the string to a function
+        const callback = new Function('return ' + onTagClick)();
+        callback(clickedText);
+      });
+    }
+  }
+  customElements.define('category-filter', CategoryFilter);
+</script>
+
+<style>
+  .tag {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    background-color: #fbc02d;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    margin: 0.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    color: black;
+  }
+
+  .tag:hover,
+  .tag:focus {
+    background-color: #ef5350;
+  }
+</style>

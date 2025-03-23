@@ -1,15 +1,33 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection} from 'astro:content';
+import ProductTag from './ProductTag.astro';
 
 const tools = await getCollection('tools');
+let displayedTools = tools;
+// Extract all tags from the collection items
+const allTags = tools.flatMap((tool) => tool.data.tags || []); // handle cases where tags might be undefined or null
 
+// Get unique tags using a Set
+const uniqueTags = [...new Set(allTags)];
+
+function handleTagSelection(selectedTag: string) {
+  console.log(`Tag clicked: ${selectedTag}`);
+  displayedTools = tools.filter(tool => tool.data.tags.includes(selectedTag));
+}
 ---
 
 <main class="bg-gray-900">
   <div class="relative mx-auto px-8 max-w-7xl py-12 md:px-12">
+    {
+      uniqueTags.map((tag) => (
+        <span>
+          <ProductTag text={tag} onTagClick={handleTagSelection}/>
+        </span>
+      ))
+    }
     <div class="grid grid-cols-1 gap-6 lg:gap-y-32 md:grid-cols-2 lg:grid-cols-3">
-      {tools.map((tool) => {
+      {displayedTools.map((tool) => {
         return (
         <figure>
           <Image
@@ -22,10 +40,10 @@ const tools = await getCollection('tools');
           <div class="mt-4 flex justify-between px-6">
             <div>
               <h3 class="text-sm text-negroni-500">
-                <a href={`/tools/${tool.id}`}>
+                {/* <a href={`/tools/${tool.id}`}>
                   <span aria-hidden="true" class="absolute inset-0"></span>
                   {tool.data.name}
-                </a>
+                </a> */}
               </h3>
               <p class="mt-1 text-lg font-medium leading-6 text-white">
                 {tool.data.description}
@@ -40,10 +58,10 @@ const tools = await getCollection('tools');
                 Battery: {tool.data.batteryType}
               </p>
             </div>
-            <p class="text-base text-tomato-500">
+            <p class="text-base text-yellow-600">
               Daily: ${tool.data.price.daily}
             </p>
-            <p class="text-base text-tomato-500">
+            <p class="text-base text-yellow-600">
               Weekly: ${tool.data.price.weekly}
             </p>
           </div>

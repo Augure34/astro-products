@@ -1,43 +1,5 @@
 @import "tailwindcss";
-@theme {
 
-  /* Charcoal  */
-  --color-charcoal-50: #eceeec;
-  --color-charcoal-100: #d7dad7;
-  --color-charcoal-200: #b0b5b0;
-  --color-charcoal-300: #889188;
-  --color-charcoal-400: #626a62;
-  --color-charcoal-500: #3e433e; /* Default */
-  --color-charcoal-600: #313531;
-  --color-charcoal-700: #252825;
-  --color-charcoal-800: #191a19;
-  --color-charcoal-900: #0c0d0c;
-
-  /* Tomato  */
-  --color-tomato-50: #ffeeeb;
-  --color-tomato-100: #ffe1dc;
-  --color-tomato-200: #febfb3;
-  --color-tomato-300: #fea090;
-  --color-tomato-400: #fd7e68;
-  --color-tomato-500: #fd6043; /* Default */
-  --color-tomato-600: #fc2803;
-  --color-tomato-700: #c01e02;
-  --color-tomato-800: #7e1401;
-  --color-tomato-900: #420a01;
-
-  /* Negroni  */
-  --color-negroni-50: #fdfaf7;
-  --color-negroni-100: #fbf5ef;
-  --color-negroni-200: #f6e8da;
-  --color-negroni-300: #f2deca;
-  --color-negroni-400: #edd1b5;
-  --color-negroni-500: #e9c7a5; /* Default */
-  --color-negroni-600: #d99e63;
-  --color-negroni-700: #c1782f;
-  --color-negroni-800: #7f4f1f;
-  --color-negroni-900: #422910;
-}
-/* CSS */
 :root {
   /* Typography */
   font-feature-settings: "liga" 1, "calt" 1,
@@ -48,7 +10,58 @@
     /* Alternate one */ "cv09", /* Flat-top three */ "cv02" 1; /* Open 4 */
   font-family: Inter, sans-serif;
   font-variant-numeric: tabular-nums;
+
+  /* Palette from D00000, FFBA08, 3F88C5, 032B43 */
+
+  /* Red (D00000) */
+  --color-red-50: #ffebee;
+  --color-red-100: #ffcdd2;
+  --color-red-200: #ef9a9a;
+  --color-red-300: #e57373;
+  --color-red-400: #ef5350;
+  --color-red-500: #d00000; /* Default */
+  --color-red-600: #c62828;
+  --color-red-700: #b71c1c;
+  --color-red-800: #d32f2f;
+  --color-red-900: #880e4f;
+  
+  /* Yellow (FFBA08) */
+  --color-yellow-50: #fffde7;
+  --color-yellow-100: #fff9c4;
+  --color-yellow-200: #fff59d;
+  --color-yellow-300: #fff176;
+  --color-yellow-400: #fffb8a;
+  --color-yellow-500: #FFBA08; /* Default */
+  --color-yellow-600: #fbc02d;
+  --color-yellow-700: #f9a825;
+  --color-yellow-800: #f57f17;
+  --color-yellow-900: #ff6f00;
+
+  /* Blue (3F88C5) */
+  --color-blue-50: #e3f2fd;
+  --color-blue-100: #bbdefb;
+  --color-blue-200: #90caf9;
+  --color-blue-300: #64b5f6;
+  --color-blue-400: #42a5f5;
+  --color-blue-500: #3F88C5; /* Default */
+  --color-blue-600: #1e88e5;
+  --color-blue-700: #1976d2;
+  --color-blue-800: #1565c0;
+  --color-blue-900: #0d47a1;
+
+  /* Dark Blue (032B43) */
+  --color-dark-blue-50: #e0e8eb;
+  --color-dark-blue-100: #b3c2cb;
+  --color-dark-blue-200: #8096a3;
+  --color-dark-blue-300: #4d6a7b;
+  --color-dark-blue-400: #26485d;
+  --color-dark-blue-500: #032B43; /* Default */
+  --color-dark-blue-600: #022439;
+  --color-dark-blue-700: #021e31;
+  --color-dark-blue-800: #011829;
+  --color-dark-blue-900: #011221;
 }
+
 @supports (font-variation-settings: normal) {
   /* Use variable font if supported */
   :root {
