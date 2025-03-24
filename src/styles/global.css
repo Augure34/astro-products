@@ -89,9 +89,11 @@
 }
 
 @supports (font-variation-settings: normal) {
-
-  /* Use variable font if supported */
-  :root {
-    font-family: InterVariable, sans-serif;
+  @font-face {
+    font-family: 'Glacial Indifference';
+    src: url('/fonts/GlacialIndifference-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
   }
 }

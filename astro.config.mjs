@@ -6,7 +6,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  // Add your domain here
-   site: 'https://lexingtonthemes.com',
+   site: 'https://le-bar-a-outils.netlify.app/',
   integrations: [ sitemap()]
 });

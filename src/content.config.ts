@@ -1,7 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
-// Define the schema once
 const productSchema = z.object({
   name: z.string(),
   description: z.string(),
@@ -17,7 +16,6 @@ const productSchema = z.object({
   manual: z.string().url().optional()
 });
 
-// Define each collection with its specific loader
 const woodworkingCollection = defineCollection({
   loader: glob({ pattern: '*.json', base: './products/woodworking' }),
   schema: productSchema,
@@ -33,7 +31,6 @@ const metalworkingCollection = defineCollection({
   schema: productSchema,
 });
 
-// Export all collections in a single object
 export const collections = {
   woodworking: woodworkingCollection,
   gardening: gardeningCollection,

@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 
   return allItems.map((item) => ({
     params: { item: item.id },
-    props: { entry: item }, // Pass the entry as a prop
+    props: { entry: item },
   }));
 }
 
