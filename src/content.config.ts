@@ -13,7 +13,8 @@ const productSchema = z.object({
   manufacturer: z.string(),
   model: z.string(),
   batteryType: z.string().optional(),
-  tags: z.array(z.string()).optional(), // Add tags to the schema.
+  tags: z.array(z.string()).optional(),
+  manual: z.string().url().optional()
 });
 
 // Define each collection with its specific loader
