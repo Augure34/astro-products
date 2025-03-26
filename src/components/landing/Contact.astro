@@ -73,6 +73,35 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
           class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
         />
       </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-semibold mb-2 text-blue-900">Recevoir notre newsletter?</label>
+        <div class="flex items-center">
+            <input 
+                type="radio" 
+                id="newsletter_yes" 
+                name="newsletter" 
+                value="yes"
+                required 
+                class="mr-2"
+            />
+            <label for="newsletter_yes" class="mr-4">Oui</label>
+    
+            <input 
+                type="radio" 
+                id="newsletter_no" 
+                name="newsletter" 
+                value="no"
+                required 
+                class="mr-2"
+            />
+            <label for="newsletter_no">Non</label>
+        </div>
+        <p class="text-xs text-gray-600 mt-2">
+          Votre adresse email sera uniquement utilisée pour vous envoyer notre newsletter et jamais partager. 
+          Pas de spam, juste des outils.
+      </p>
+    </div>
   
       <input type="hidden" name="itemId" value={itemId || ""} />
       <input type="hidden" name="itemName" value={item.data.name || ""} />
@@ -84,31 +113,39 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
   </div>
 
 <script>
-    const sendEmailButton = document.getElementById("sendEmailButton");
-    const contactForm = document.getElementById("contactForm");
+const sendEmailButton = document.getElementById("sendEmailButton");
+const contactForm = document.getElementById("contactForm");
 
-    if (sendEmailButton && contactForm) {
-        sendEmailButton.addEventListener("click", (event) => {
-            event.preventDefault();
+if (sendEmailButton && contactForm) {
+    sendEmailButton.addEventListener("click", (event) => {
+        event.preventDefault();
 
-            const name = contactForm.name.value;
-            const startDate = contactForm.startDate?.value;
-            const dayNumber = contactForm.dayNumber?.value;
-            const itemId = contactForm.itemId.value;
-            const itemName = contactForm.itemName.value;
+        const name = contactForm.name.value;
+        const startDate = contactForm.startDate?.value;
+        const dayNumber = contactForm.dayNumber?.value;
+        const itemId = contactForm.itemId.value;
+        const itemName = contactForm.itemName.value;
+        const acceptNewsletter = contactForm.newsletter_yes.checked;
 
-            let body = `Nom: ${name}`;
-            if (startDate && dayNumber) {
-                body += `\nStart Date: ${startDate}\nNumber of Days: ${dayNumber}`;
-            }
-            body += `\nItem ID: ${itemId}\nItem Name: ${itemName}`;
-            body += `\n-------------Ne rien modifier au dessus de cette ligne----------------`;
-            body += `\nMessage libre (optionnel):`;
+        let body = `Nom: ${name}`;
+        if (startDate && dayNumber) {
+            body += `\nDate de début: ${startDate}\nNombre de jours: ${dayNumber}`;
+        }
 
-            const subject = `Demande de réservation pour ${itemName}`;
-            const mailtoLink = `mailto:ghislain.rossi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        if (acceptNewsletter === true) {
+            body += `\nJ'accepte de recevoir votre newsletter.`;
+        }
 
-            window.open(mailtoLink, "_blank");
-        });
-    }
+        body += `\nItem ID: ${itemId}\nItem Name: ${itemName}`;
+        body += `\n-------------Ne rien modifier au dessus de cette ligne----------------`;
+        body += `\nMessage libre (optionnel):`;
+
+        const subject = `Demande de réservation pour ${itemName}`;
+        const mailtoLink = `mailto:baraoutils@gmail.com?subject=${encodeURIComponent(
+            subject
+        )}&body=${encodeURIComponent(body)}`;
+
+        window.open(mailtoLink, "_blank");
+    });
+}
 </script>
