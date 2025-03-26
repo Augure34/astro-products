@@ -1,0 +1,15 @@
+{
+    "name": "Défonceuse",
+    "description": "Puissante (1200W) pour travaux précis du bois. Vitesse variable, réglage fin de profondeur. Changement rapide de fraise, confort d'utilisation. Idéale pour rainures, moulures, assemblages",
+    "price": {
+        "daily": 15.00,
+        "weekly": 60.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=TEST&font=Montserrat",
+    "manufacturer": "Bosch",
+    "model": "POF 1200 AE",
+    "batteryType": "Filaire",
+    "manual": "https://www.modesdemploi.fr/bosch/pof-1200-ae/mode-d-emploi",
+    "Type": "Travail du bois",
+    "Caution": "225,00 €"
+}

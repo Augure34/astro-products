@@ -147,7 +147,15 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"divers": Record<string, {
+		"bricolage": Record<string, {
+  id: string;
+  body?: string;
+  collection: "bricolage";
+  data: InferEntrySchema<"bricolage">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"divers": Record<string, {
   id: string;
   body?: string;
   collection: "divers";
@@ -163,35 +171,27 @@ declare module 'astro:content' {
   rendered?: RenderedContent;
   filePath?: string;
 }>;
+"menuiserie": Record<string, {
+  id: string;
+  body?: string;
+  collection: "menuiserie";
+  data: InferEntrySchema<"menuiserie">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"metalurgie": Record<string, {
+  id: string;
+  body?: string;
+  collection: "metalurgie";
+  data: InferEntrySchema<"metalurgie">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
 "nettoyage": Record<string, {
   id: string;
   body?: string;
   collection: "nettoyage";
   data: InferEntrySchema<"nettoyage">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"travailDuBois": Record<string, {
-  id: string;
-  body?: string;
-  collection: "travailDuBois";
-  data: InferEntrySchema<"travailDuBois">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"travailDuMetal": Record<string, {
-  id: string;
-  body?: string;
-  collection: "travailDuMetal";
-  data: InferEntrySchema<"travailDuMetal">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"travauxGeneraux": Record<string, {
-  id: string;
-  body?: string;
-  collection: "travauxGeneraux";
-  data: InferEntrySchema<"travauxGeneraux">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;

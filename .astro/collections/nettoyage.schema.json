@@ -27,8 +27,7 @@
           "additionalProperties": false
         },
         "image": {
-          "type": "string",
-          "format": "uri"
+          "type": "string"
         },
         "manufacturer": {
           "type": "string"

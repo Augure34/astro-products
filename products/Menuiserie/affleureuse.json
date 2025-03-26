@@ -1,0 +1,15 @@
+{
+    "name": "Affleureuse",
+    "description": "Affleureuse sans fil 18V. Compacte et maniable, idéale pour défonçage précis et affleurage. Vitesse variable, démarrage progressif. Polyvalence et performance pour tous vos travaux de finition.",
+    "price": {
+        "daily": 12.00,
+        "weekly": 48.00
+    },
+    "image": "/products/affleureuse.jpg",
+    "manufacturer": "Makita",
+    "model": "DRT50Z",
+    "batteryType": "Batterie",
+    "manual": "https://www.modesdemploi.fr/makita/drt50/mode-d-emploi",
+    "Type": "Travail du bois",
+    "Caution": "180,00 €"
+}
