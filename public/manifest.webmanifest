@@ -1,0 +1,24 @@
+{
+    "short_name": "Le Bar",
+    "name": "Le bar à outils",
+    "icons": [
+      {
+        "src": "/favicons/lebar180x180.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "/favicons/lebar500x500.png",
+        "sizes": "500x500",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0d47a1",
+    "theme_color": "#fbc02d",
+    "description": "Location d'outils professionnels et particuliers à Montpellier",
+    "orientation": "any"
+  }
