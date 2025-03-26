@@ -1,0 +1,15 @@
+{
+    "name": "Taille haie",
+    "description": "Sans fil : autonomie et précision. Coupe haute portée, lames affûtées, angles réglables. Léger, maniable, idéal pour haies hautes et difficiles. ",
+    "price": {
+        "daily": 17.00,
+        "weekly": 68.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=TEST&font=Montserrat",
+    "manufacturer": "Makita",
+    "model": "DUN461WZ",
+    "batteryType": "Batterie",
+    "manual": "https://www.modesdemploi.fr/makita/dun461wz/mode-d-emploi",
+    "Type": "Jardinage",
+    "Caution": "255,00 €"
+}

@@ -8,31 +8,49 @@ const productSchema = z.object({
     daily: z.number(),
     weekly: z.number(),
   }),
-  image: z.string().url(),
-  manufacturer: z.string(),
-  model: z.string(),
+  image: z.string().url().optional(),
+  manufacturer: z.string().optional(),
+  model: z.string().optional(),
   batteryType: z.string().optional(),
   tags: z.array(z.string()).optional(),
   manual: z.string().url().optional()
 });
 
-const woodworkingCollection = defineCollection({
-  loader: glob({ pattern: '*.json', base: './products/woodworking' }),
+const diversCollection = defineCollection({
+  loader: glob({ pattern: '*.json', base: './products/Divers' }),
   schema: productSchema,
 });
 
-const gardeningCollection = defineCollection({
-  loader: glob({ pattern: '*.json', base: './products/gardening' }),
+const jardinageCollection = defineCollection({
+  loader: glob({ pattern: '*.json', base: './products/Jardinage' }),
   schema: productSchema,
 });
 
-const metalworkingCollection = defineCollection({
-  loader: glob({ pattern: '*.json', base: './products/metalworking' }),
+const nettoyageCollection = defineCollection({
+  loader: glob({ pattern: '*.json', base: './products/Nettoyage' }),
+  schema: productSchema,
+});
+
+const travailDuBoisCollection = defineCollection({
+  loader: glob({ pattern: '*.json', base: './products/Travail du bois' }),
+  schema: productSchema,
+});
+
+const travailDuMetalCollection = defineCollection({
+  loader: glob({ pattern: '*.json', base: './products/Travail du métal' }),
+  schema: productSchema,
+});
+
+const travauxGenerauxCollection = defineCollection({
+  loader: glob({ pattern: '*.json', base: './products/Travaux Généraux' }),
   schema: productSchema,
 });
 
 export const collections = {
-  woodworking: woodworkingCollection,
-  gardening: gardeningCollection,
-  metalworking: metalworkingCollection,
+  divers: diversCollection,
+  jardinage: jardinageCollection,
+  nettoyage: nettoyageCollection,
+  travailDuBois: travailDuBoisCollection,
+  travailDuMetal: travailDuMetalCollection,
+  travauxGeneraux: travauxGenerauxCollection,
 };

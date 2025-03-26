@@ -1,0 +1,14 @@
+{
+    "name": "Compresseur",
+    "description": "80L, 8CV : Puissance et capacité pour tous vos travaux pneumatiques. Gonflage, peinture, outils... Débit constant, performance optimale.",
+    "price": {
+        "daily": 12.00,
+        "weekly": 48.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=TEST&font=Montserrat",
+    "manufacturer": "Quartz",
+    "batteryType": "Filaire",
+    "manual": "https://www.euro-expos.com/download/compresseur-quartz-prodif-v204710-100-litres-3cv-63206.pdf",
+    "Type": "Travaux généraux",
+    "Caution": "180,00 €"
+}

@@ -1,0 +1,12 @@
+{
+    "name": "Diable 3 positions",
+    "description": "Déménagement, travaux ou transport de charges lourdes 350kg, ce diable 3 en 1 est un indispensable. Modulable, il peut être utilisé en position diable, inclinée ou chariot. Maniable et robuste.",
+    "price": {
+        "daily": 10.00,
+        "weekly": 40.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=TEST&font=Montserrat",
+    "manufacturer": "Cosco",
+    "Type": "Divers",
+    "Caution": "150,00 €"
+}

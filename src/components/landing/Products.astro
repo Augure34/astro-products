@@ -3,9 +3,12 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 const collections = {
-  woodworking: await getCollection("woodworking"),
-  gardening: await getCollection("gardening"),
-  metalworking: await getCollection("metalworking"),
+  divers: await getCollection("divers"),
+  jardinage: await getCollection("jardinage"),
+  nettoyage: await getCollection("nettoyage"),
+  bois: await getCollection("travailDuBois"),
+  metal: await getCollection("travailDuMetal"),
+  general: await getCollection("travauxGeneraux"),
 };
 ---
 

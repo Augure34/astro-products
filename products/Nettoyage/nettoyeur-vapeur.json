@@ -1,0 +1,14 @@
+{
+    "name": "Nettoyeur vapeur",
+    "description": "Haute température 160°. Désinfection puissante, élimine saleté, bactéries et punaises de lit sans produits chimiques. Vapeur réglable, idéal pour sols, tissus, surfaces difficiles.",
+    "price": {
+        "daily": 40.00,
+        "weekly": 160.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=TEST&font=Montserrat",
+    "manufacturer": "AEOLUS EOLO",
+    "model": "GV05 SB200C",
+    "batteryType": "Filaire",
+    "Type": "Nettoyage",
+    "Caution": "600,00 €"
+}

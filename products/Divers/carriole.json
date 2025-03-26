@@ -1,0 +1,14 @@
+{
+    "name": "Carriole vélo",
+    "description": "Remorque vélo 2-en-1, confort et sécurité pour enfants. Se transforme en poussette. Pliage compact, système ezHitch, harnais 5 points. Possibilité de hamac bébé.",
+    "price": {
+        "daily": 20.00,
+        "weekly": 80.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=TEST&font=Montserrat",
+    "manufacturer": "Thule",
+    "model": "XT Coaster",
+    "manual": "https://www.modesdemploi.fr/thule/coaster-xt/mode-d-emploi",
+    "Type": "Divers",
+    "Caution": "300,00 €"
+}

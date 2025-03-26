@@ -1,0 +1,15 @@
+{
+    "name": "Débroussailleuse",
+    "description": "Liberté totale, batteries puissante, coupe nette et précise. Léger, maniable, idéal jardins, brousaille et allées. Silencieux",
+    "price": {
+        "daily": 15.00,
+        "weekly": 60.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=TEST&font=Montserrat",
+    "manufacturer": "Dolmar (Makita)",
+    "model": "AT3724U",
+    "batteryType": "Batterie",
+    "manual": "https://www.modesdemploi.fr/dolmar/at3724u/mode-d-emploi",
+    "Type": "Jardinage",
+    "Caution": "225,00 €"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Souffleur-broyeur",
+    "description": "Nettoyez vos extérieurs sans effort ! Soufflez, aspirez, broyez feuilles et débris. Léger, maniable, sac collecteur inclus. Gain de temps garanti pour un jardin impeccable.",
+    "price": {
+        "daily": 8.00,
+        "weekly": 32.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=TEST&font=Montserrat",
+    "manufacturer": "Ryobi",
+    "model": "2000W",
+    "batteryType": "Filaire",
+    "manual": "https://www.modesdemploi.fr/ryobi/rbv2800s/mode-d-emploi",
+    "Type": "Jardinage",
+    "Caution": "120,00 €"
+}

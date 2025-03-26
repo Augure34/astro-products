@@ -1,0 +1,15 @@
+{
+    "name": "Nettoyeur pression",
+    "description": "Haute pression électrique max. 360l/h, 20 / max. 110 bar, puissant et compact. Contrôle facile de la pression pour un nettoyage efficace. Idéal terrasses, voitures, etc. Embout terasse anti projection",
+    "price": {
+        "daily": 17.00,
+        "weekly": 68.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=TEST&font=Montserrat",
+    "manufacturer": "Kärcher",
+    "model": "K2 control Home",
+    "batteryType": "Filaire",
+    "manual": "https://www.modesdemploi.fr/karcher/k2-power-control-home/mode-d-emploi",
+    "Type": "Nettoyage",
+    "Caution": "255,00 €"
+}

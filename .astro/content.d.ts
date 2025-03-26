@@ -147,27 +147,51 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"gardening": Record<string, {
+		"divers": Record<string, {
   id: string;
   body?: string;
-  collection: "gardening";
-  data: InferEntrySchema<"gardening">;
+  collection: "divers";
+  data: InferEntrySchema<"divers">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
-"metalworking": Record<string, {
+"jardinage": Record<string, {
   id: string;
   body?: string;
-  collection: "metalworking";
-  data: InferEntrySchema<"metalworking">;
+  collection: "jardinage";
+  data: InferEntrySchema<"jardinage">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
-"woodworking": Record<string, {
+"nettoyage": Record<string, {
   id: string;
   body?: string;
-  collection: "woodworking";
-  data: InferEntrySchema<"woodworking">;
+  collection: "nettoyage";
+  data: InferEntrySchema<"nettoyage">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"travailDuBois": Record<string, {
+  id: string;
+  body?: string;
+  collection: "travailDuBois";
+  data: InferEntrySchema<"travailDuBois">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"travailDuMetal": Record<string, {
+  id: string;
+  body?: string;
+  collection: "travailDuMetal";
+  data: InferEntrySchema<"travailDuMetal">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"travauxGeneraux": Record<string, {
+  id: string;
+  body?: string;
+  collection: "travauxGeneraux";
+  data: InferEntrySchema<"travauxGeneraux">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;

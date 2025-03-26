@@ -1,0 +1,15 @@
+{
+    "name": "Perforateur-burineur",
+    "description": "SDS-Plus 18V. Puissance et légèreté pour béton, bois, acier. Technologie AVT anti-vibrations, LED intégrée. Kit complet avec 2 batteries, chargeur et coffret. Location pro !",
+    "price": {
+        "daily": 16.00,
+        "weekly": 64.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=TEST&font=Montserrat",
+    "manufacturer": "Makita",
+    "model": "DHR165",
+    "batteryType": "Batterie",
+    "manual": "https://www.modesdemploi.fr/makita/dhr165zj/mode-d-emploi",
+    "Type": "Travaux généraux",
+    "Caution": "240,00 €"
+}

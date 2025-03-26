@@ -1,0 +1,15 @@
+{
+    "name": "Touret à meuler",
+    "description": "Puissance et précision pour affûtage et meulage. Robuste, stable, idéal pour ateliers et bricoleurs exigeants. Meules haute qualité, sécurité optimale.",
+    "price": {
+        "daily": 10.00,
+        "weekly": 40.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=TEST&font=Montserrat",
+    "manufacturer": "Bosch",
+    "model": "gbg 35-15",
+    "batteryType": "Filaire",
+    "manual": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.modesdemploi.fr/bosch/gbg-35-15-professional/mode-d-emploi&ved=2ahUKEwjp-6mLoKiMAxVmlP0HHeGJAoEQFnoECAwQAQ&usg=AOvVaw2x-M2tOD1cbUR5PKqc6EIJ",
+    "Type": "Travaux généraux",
+    "Caution": "150,00 €"
+}

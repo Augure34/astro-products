@@ -1,0 +1,15 @@
+{
+    "name": "Meuleuse d'angle",
+    "description": "Sans fil 18V, Ø125mm. Puissante et maniable, idéale pour découper, meuler, ébarber. Sécurité renforcée, contrôle précis",
+    "price": {
+        "daily": 15.00,
+        "weekly": 60.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=TEST&font=Montserrat",
+    "manufacturer": "Makita",
+    "model": "DGA517Z",
+    "batteryType": "Batterie",
+    "manual": "https://www.modesdemploi.fr/makita/dga517z/mode-d-emploi",
+    "Type": "Travail du métal",
+    "Caution": "225,00 €"
+}

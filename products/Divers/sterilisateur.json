@@ -1,0 +1,14 @@
+{
+    "name": "Stérilisateur",
+    "description": "Stérilisez vos conserves maison avec ce stérilisateur électrique ! 27 L et une puissance de 1 800 W, température réglable, minuterie intégrée. Facile et sûr, idéal pour fruits, légumes, plats cuisinés.",
+    "price": {
+        "daily": 4.00,
+        "weekly": 16.00
+    },
+    "image": "https://placehold.co/400x300/EEE/31343C?text=TEST&font=Montserrat",
+    "manufacturer": "Silvercrest",
+    "batteryType": "Filaire",
+    "manual": "https://www.modesdemploi.fr/silvercrest/sead-1800-a1/mode-d-emploi",
+    "Type": "Divers",
+    "Caution": "60,00 €"
+}
