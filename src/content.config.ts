@@ -52,5 +52,5 @@ export const collections = {
   nettoyage: nettoyageCollection,
   menuiserie: travailDuBoisCollection,
   metalurgie: travailDuMetalCollection,
-  bricolage: travauxGenerauxCollection,
+  bricolage: travauxGenerauxCollection
 };
