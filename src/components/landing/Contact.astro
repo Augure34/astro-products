@@ -8,9 +8,12 @@ export interface Props {
 const { itemId } = Astro.props;
 console.log(Astro.props);
 const collections = {
-    woodworking: await getCollection("woodworking"),
-    gardening: await getCollection("gardening"),
-    metalworking: await getCollection("metalworking"),
+  Menuiserie: await getCollection("menuiserie"),
+  Nettoyage: await getCollection("nettoyage"),
+  Jardinage: await getCollection("jardinage"),
+  Bricolage: await getCollection("bricolage"),
+  Metalurgie: await getCollection("metalurgie"),
+  Divers: await getCollection("divers"),
 };
 let item: any = null;
 if (itemId) {

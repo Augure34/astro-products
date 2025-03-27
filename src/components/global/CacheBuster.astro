@@ -1,0 +1,8 @@
+---
+export let VersionHash: string = "makita";
+
+export function ToCacheBustable(uri: string): string {
+  return uri + "?hash=" + VersionHash;
+}
+
+---

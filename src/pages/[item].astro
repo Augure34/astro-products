@@ -8,11 +8,14 @@ const { item } = Astro.params;
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const woodworking = await getCollection("woodworking");
-  const gardening = await getCollection("gardening");
-  const metalworking = await getCollection("metalworking");
+  const Menuiserie = await getCollection("menuiserie");
+  const Nettoyage = await getCollection("nettoyage");
+  const Jardinage = await getCollection("jardinage");
+  const Bricolage = await getCollection("bricolage");
+  const Metalurgie = await getCollection("metalurgie");
+  const Divers = await getCollection("divers");
 
-  const allItems = [...woodworking, ...gardening, ...metalworking];
+  const allItems = [...Menuiserie, ...Nettoyage, ...Jardinage, ...Bricolage, ...Metalurgie, ...Divers];
 
   return allItems.map((item) => ({
     params: { item: item.id },
