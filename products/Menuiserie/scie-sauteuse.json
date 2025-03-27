@@ -1,0 +1,15 @@
+{
+    "name": "Scie sauteuse",
+    "description": "Compacte et légère qui permet de couper facilement différents matériaux. Plusieurs réglages pour des coupes droites ou libres",
+    "price": {
+        "daily": 15.00,
+        "weekly": 50.00
+    },
+    "image": "/products/scie-sauteuse.webp",
+    "manufacturer": "Makita",
+    "model": "4329K",
+    "batteryType": "Filaire",
+    "manual": "https://www.modesdemploi.fr/makita/4329/mode-d-emploi",
+    "Type": "Travail du bois",
+    "Caution": "150,00 €"
+}

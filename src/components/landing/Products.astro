@@ -24,12 +24,32 @@ Astro.response.headers.set(
 
 <main class="bg-gray-900">
   <div class="relative mx-auto px-8 max-w-7xl py-12 md:px-12">
-    <h1 class="text-2xl font-bold text-yellow-600 mb-8 text-center tracking-wider">Location d'outils pour particuliers sur Montpellier</h1>
+    <h1
+      class="text-2xl font-bold text-yellow-600 mb-8 text-center tracking-wider"
+    >
+      Location d'outils pour particuliers sur Montpellier
+    </h1>
+
+    <div class="flex flex-wrap justify-center mb-8">
+      {
+        Object.keys(collections).map((collectionName) => (
+          <button
+            class="bg-yellow-500 text-black py-2 px-4 rounded-3xl mx-2 mb-2 hover:bg-yellow-600 transition-colors duration-200 scroll-link min-w-[120px]"
+            data-collection={collectionName}
+          >
+            {collectionName}
+          </button>
+        ))
+      }
+    </div>
     {
       Object.entries(collections).map(([collectionName, collectionItems]) => {
         return (
           <div class="mt-8">
-            <h1 class="font-semibold text-gray-900 bg-yellow-600 rounded-3xl p-2 m-10 mx-auto text-center max-w-md text-xl">
+            <h1
+              class="font-semibold text-gray-900 bg-yellow-600 rounded-3xl p-2 m-10 mx-auto text-center max-w-md text-xl"
+              id={`collection-${collectionName}`}
+            >
               {collectionName}
             </h1>
             <div class="grid grid-cols-1 gap-6 lg:gap-y-32 md:grid-cols-2 lg:grid-cols-3">
@@ -101,3 +121,58 @@ Astro.response.headers.set(
     }
   </div>
 </main>
+
+<button
+  id="backToTopButton"
+  class="fixed bottom-8 right-8 bg-yellow-500 text-black p-3 rounded-full shadow-md cursor-pointer opacity-0 transition-opacity duration-300 invisible"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+  </svg>
+</button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const scrollLinks = document.querySelectorAll(".scroll-link");
+
+    scrollLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const collectionName = (event.currentTarget as HTMLElement).dataset
+          .collection;
+        if (collectionName) {
+          const element = document.getElementById(
+            `collection-${collectionName}`,
+          );
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      });
+    });
+  });
+  const backToTopButton = document.getElementById("backToTopButton");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopButton.classList.remove("invisible");
+      backToTopButton.classList.add("opacity-100");
+    } else {
+      backToTopButton.classList.add("invisible");
+      backToTopButton.classList.remove("opacity-100");
+    }
+  });
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
