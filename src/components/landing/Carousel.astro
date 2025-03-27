@@ -1,59 +1,64 @@
 ---
 import "@glidejs/glide/dist/css/glide.core.min.css";
 const images = [
-  "/reviews/001.png",
-  "/reviews/002.png",
-  "/reviews/003.png",
-  "/reviews/004.png",
-  "/reviews/005.png",
-  "/reviews/006.png",
-  "/reviews/007.png",
-  "/reviews/008.png",
-  "/reviews/009.png",
-  "/reviews/010.png",
+    "/reviews/001.png",
+    "/reviews/002.png",
+    "/reviews/003.png",
+    "/reviews/004.png",
+    "/reviews/005.png",
+    "/reviews/006.png",
+    "/reviews/007.png",
+    "/reviews/008.png",
+    "/reviews/009.png",
+    "/reviews/010.png",
 ];
 ---
 
 <div class="glide bg-yellow-500 p-2">
-  <div class="glide__track" data-glide-el="track">
-    <ul class="glide__slides">
-      {images.map((image) => (
-        <li class="glide__slide">
-          <div class="relative w-100 h-80 overflow-hidden rounded-3xl bg-white">
-            <img
-              src={image}
-              alt="Un commentaire d'un de nos utilisateurs"
-              class="absolute top-0 left-0 w-full h-full object-contain"
-            />
-          </div>
-        </li>
-      ))}
-    </ul>
-  </div>
+    <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+            {
+                images.map((image) => (
+                    <li class="glide__slide">
+                        <div class="relative w-100 h-80 overflow-hidden rounded-3xl bg-white">
+                            <img
+                                src={image}
+                                alt="Un commentaire d'un de nos utilisateurs"
+                                class="absolute top-0 left-0 w-full h-full object-contain"
+                            />
+                        </div>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
 </div>
 
 <script>
-  import Glide from "@glidejs/glide";
+    import Glide from "@glidejs/glide";
 
-  document.addEventListener("DOMContentLoaded", () => {
-    new Glide(".glide", {
-      type: "carousel",
-      perView: 6,
-      focusAt: "center",
-      breakpoints: {
-        2000: {
-          perView: 4,
-        },
-        1400: {
-          perView: 3,
-        },
-        900: {
-          perView: 2,
-        },
-        400: {
-          perView: 1,
-        },
-      },
-    }).mount();
-  });
+    document.addEventListener("DOMContentLoaded", () => {
+        new Glide(".glide", {
+            type: "carousel",
+            focusAt: "1",
+            perView: 6,
+            breakpoints: {
+                2500: {
+                    perView: 5,
+                },
+                2224: {
+                    perView: 4,
+                },
+                1624: {
+                    perView: 3,
+                },
+                1300: {
+                    perView: 2,
+                },
+                800: {
+                    perView: 1,
+                },
+            },
+        }).mount();
+    });
 </script>
