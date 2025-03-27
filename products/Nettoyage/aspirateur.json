@@ -5,7 +5,7 @@
         "daily": 10.00,
         "weekly": 40.00
     },
-    "image": "/products/aspirateur.jpg",
+    "image": "/products/aspirateur.webp",
     "manufacturer": "Stanley",
     "model": "SXVC25PTDE",
     "batteryType": "Filaire",
