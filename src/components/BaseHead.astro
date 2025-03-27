@@ -1,5 +1,10 @@
 ---
 import '../styles/global.css';
+import { ToCacheBustable } from "./global/CacheBuster.astro";
+Astro.response.headers.set(
+  "Cache-Control",
+  "public, max-age=31536000, immutable",
+);
 ---
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,9 +22,9 @@ import '../styles/global.css';
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Favicons -->
-<link rel="apple-touch-icon" href="/favicons/lebar500x500.png" />
+<link rel="apple-touch-icon" href={ToCacheBustable("/favicons/lebar500x500.png")} />
 <link rel="manifest" href="/manifest.webmanifest" />
-<link rel="icon" type="image/png" sizes="48x48" href="/favicons/lebar48x48.png" />
+<link rel="icon" type="image/png" sizes="48x48" href={ToCacheBustable("/favicons/lebar48x48.png")} />
 
 <!-- Canonical URL -->
 <link rel="canonical" href="https://bar-a-outils.com/" />
@@ -29,7 +34,7 @@ import '../styles/global.css';
 <meta name="googlebot" content="index, follow" />
 
 <!-- Apple Touch Icon (already included in favicons, but keeping for backwards compatibility) -->
-<link rel="apple-touch-icon" sizes="180x180" href="/favicons/lebar180x180.png" />
+<link rel="apple-touch-icon" sizes="180x180" href={ToCacheBustable("/favicons/lebar180x180png")} />
 
 <!-- Theme Color for Mobile Browsers -->
 <meta name="theme-color" content="#3E433E" />
