@@ -24,11 +24,12 @@ Astro.response.headers.set(
 
 <main class="bg-gray-900">
   <div class="relative mx-auto px-8 max-w-7xl py-12 md:px-12">
+    <h1 class="text-2xl font-bold text-yellow-600 mb-8 capitalize text-center tracking-wider pt-6 pb-6">Location d'outils professionnels et particuliers sur Montpellier</h1>
     {
       Object.entries(collections).map(([collectionName, collectionItems]) => {
         return (
           <div class="mt-8">
-            <h1 class="text-3xl font-bold text-yellow-600 mb-8 capitalize text-center tracking-wider pt-6 pb-6">
+            <h1 class="font-semibold text-gray-900 bg-yellow-600 rounded-3xl p-2 m-10 mx-auto text-center max-w-md text-xl">
               {collectionName}
             </h1>
             <div class="grid grid-cols-1 gap-6 lg:gap-y-32 md:grid-cols-2 lg:grid-cols-3">
