@@ -30,7 +30,6 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
     .toISOString()
     .split("T")[0];
 ---
-
 <div class="bg-gray-900 pt-8 pb-8 px-4 w-full flex flex-col items-center">
   <div class="bg-yellow-600 text-blue-900 text-center w-full max-w-lg p-4 mb-8 rounded-md shadow-md">
       <h2 class="text-2xl">
@@ -43,6 +42,18 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
 
   <form id="contactForm" class="bg-yellow-600 text-gray-900 p-8 rounded-md shadow-md w-full max-w-lg" data-netlify="true" name="reservation">
       <input type="hidden" name="form-name" value="reservation" />
+
+      <div class="mb-4">
+          <label for="email" class="block text-sm font-semibold mb-2 text-blue-900">Email:</label>
+          <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+          />
+      </div>
+
       <div class="mb-4">
           <label for="startDate" class="block text-sm font-semibold mb-2 text-blue-900">Date de début:</label>
           <input
@@ -84,8 +95,8 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
               <input
                   type="radio"
                   id="newsletter_yes"
-                  name="newsletter"
-                  value="yes"
+                  name="NewsLetterSub"
+                  value="Oui"
                   required
                   class="mr-2"
               />
@@ -94,8 +105,8 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
               <input
                   type="radio"
                   id="newsletter_no"
-                  name="newsletter"
-                  value="no"
+                  name="NewsLetterSub"
+                  value="Non"
                   required
                   class="mr-2"
               />
@@ -107,6 +118,15 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
           </p>
       </div>
 
+      <div class="mb-4">
+          <label for="message" class="block text-sm font-semibold mb-2 text-blue-900">Message (optionnel):</label>
+          <textarea
+              id="message"
+              name="message"
+              class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+          ></textarea>
+      </div>
+
       <input type="hidden" name="itemId" value={itemId || ""} />
       <input type="hidden" name="itemName" value={item.data.name || ""} />
 
@@ -115,42 +135,3 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
       </button>
   </form>
 </div>
-<!-- 
-<script>
-const sendEmailButton = document.getElementById("sendEmailButton");
-const contactForm = document.getElementById("contactForm");
-
-if (sendEmailButton && contactForm) {
-    sendEmailButton.addEventListener("click", (event) => {
-        event.preventDefault();
-
-        const name = contactForm.name.value;
-        const startDate = contactForm.startDate?.value;
-        const dayNumber = contactForm.dayNumber?.value;
-        const itemId = contactForm.itemId.value;
-        const itemName = contactForm.itemName.value;
-        const acceptNewsletter = contactForm.newsletter_yes.checked;
-
-        let body = `Nom: ${name}`;
-        if (startDate && dayNumber) {
-            body += `\nDate de début: ${startDate}\nNombre de jours: ${dayNumber}`;
-        }
-
-        if (acceptNewsletter === true) {
-            body += `\nJ'accepte de recevoir votre newsletter.`;
-        }
-
-        body += `\nItem ID: ${itemId}\nItem Name: ${itemName}`;
-        body += `\n-------------Ne rien modifier au dessus de cette ligne----------------`;
-        body += `\nMessage libre (optionnel):`;
-
-        const subject = `Demande de réservation pour ${itemName}`;
-        const mailtoLink = `mailto:baraoutils@gmail.com?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-
-        window.open(mailtoLink, "_blank");
-    });
-}
-</script>
- -->
