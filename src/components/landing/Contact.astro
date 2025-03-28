@@ -40,9 +40,13 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
       </h2>
   </div>
 
-  <form id="contactForm" class="bg-yellow-600 text-gray-900 p-8 rounded-md shadow-md w-full max-w-lg" data-netlify="true" name="reservation">
+  <form id="contactForm" class="bg-yellow-600 text-gray-900 p-8 rounded-md shadow-md w-full max-w-lg" data-netlify="true" name="reservation" action="/pages/success" method="POST" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="reservation" />
-
+      <p class="hidden">
+        <label>
+          Don't fill this out: <input name="bot-field" />
+        </label>
+      </p>
       <div class="mb-4">
           <label for="email" class="block text-sm font-semibold mb-2 text-blue-900">Email*:</label>
           <input
