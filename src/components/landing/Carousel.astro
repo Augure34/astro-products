@@ -10,7 +10,6 @@ const images = [
     "/reviews/007.png",
     "/reviews/008.png",
     "/reviews/009.png",
-    "/reviews/010.png",
 ];
 ---
 
@@ -40,7 +39,7 @@ const images = [
     document.addEventListener("DOMContentLoaded", () => {
         new Glide(".glide", {
             type: "carousel",
-            focusAt: "1",
+            focusAt: "center",
             perView: 6,
             breakpoints: {
                 2500: {
