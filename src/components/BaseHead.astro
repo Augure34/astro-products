@@ -1,11 +1,12 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 import { ToCacheBustable } from "./global/CacheBuster.astro";
 Astro.response.headers.set(
   "Cache-Control",
   "public, max-age=31536000, immutable",
 );
 ---
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -15,16 +16,30 @@ Astro.response.headers.set(
   name="description"
   content="Location d'outils professionnels et particuliers à Montpellier"
 />
-<meta name="google-site-verification" content="ml9yzPbP54I3iXnOatpQ4P2ds0I2DdSlEcZ5wXePpP4" />
-<meta name="keywords" content="location outils Montpellier, location outillage Montpellier, location matériel bricolage Montpellier, location matériel jardinage Montpellier, location matériel chantier Montpellier, location matériel nettoyage Montpellier, location outillage électroportatif Montpellier, location outils professionnels Montpellier, location outils particuliers Montpellier, location outils pas cher Montpellier, location Bissell a Montpellier, location shampouineuse a Montpellier, location injecteur extracteur, punaise de lit Montpellier" />
+<meta
+  name="google-site-verification"
+  content="ml9yzPbP54I3iXnOatpQ4P2ds0I2DdSlEcZ5wXePpP4"
+/>
+<meta
+  name="keywords"
+  content="location outils Montpellier, location outillage Montpellier, location matériel bricolage Montpellier, location matériel jardinage Montpellier, location matériel chantier Montpellier, location matériel nettoyage Montpellier, location outillage électroportatif Montpellier, location outils professionnels Montpellier, location outils particuliers Montpellier, location outils pas cher Montpellier, location Bissell a Montpellier, location shampouineuse a Montpellier, location injecteur extracteur, punaise de lit Montpellier"
+/>
 <meta name="author" content="Bar à outils" />
 
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Favicons -->
-<link rel="apple-touch-icon" href={ToCacheBustable("/favicons/lebar500x500.png")} />
+<link
+  rel="apple-touch-icon"
+  href={ToCacheBustable("/favicons/lebar500x500.png")}
+/>
 <link rel="manifest" href="/manifest.webmanifest" />
-<link rel="icon" type="image/png" sizes="48x48" href={ToCacheBustable("/favicons/lebar48x48.png")} />
+<link
+  rel="icon"
+  type="image/png"
+  sizes="48x48"
+  href={ToCacheBustable("/favicons/lebar48x48.png")}
+/>
 
 <!-- Canonical URL -->
 <link rel="canonical" href="https://bar-a-outils.com/" />
@@ -34,10 +49,30 @@ Astro.response.headers.set(
 <meta name="googlebot" content="index, follow" />
 
 <!-- Apple Touch Icon (already included in favicons, but keeping for backwards compatibility) -->
-<link rel="apple-touch-icon" sizes="180x180" href={ToCacheBustable("/favicons/lebar180x180.png")} />
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href={ToCacheBustable("/favicons/lebar180x180.png")}
+/>
 
 <!-- Theme Color for Mobile Browsers -->
 <meta name="theme-color" content="#3E433E" />
 
 <!-- For IE -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!-- Google Tag Manager -->
+<script>
+  import.meta.env.GOOGLE_TAG_KEY;
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-WBD87NSH");
+</script>
+<!-- End Google Tag Manager -->
