@@ -30,125 +30,121 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
     .toISOString()
     .split("T")[0];
 ---
-
 <div class="bg-gray-900 pt-8 pb-8 px-4 w-full flex flex-col items-center">
-    <div class="bg-yellow-600 text-blue-900 text-center w-full max-w-lg p-4 mb-8 rounded-md shadow-md">
+  <div class="bg-yellow-600 text-blue-900 text-center w-full max-w-lg p-4 mb-8 rounded-md shadow-md">
       <h2 class="text-2xl">
-        Demande de réservation
+          Demande de réservation
       </h2>
       <h2 class="text-2xl font-semibold">
-        {item.data.name}
-    </h2>
-    </div>
-  
-    <form id="contactForm" class="bg-yellow-600 text-gray-900 p-8 rounded-md shadow-md w-full max-w-lg">
+          {item.data.name}
+      </h2>
+  </div>
+
+  <form id="contactForm" class="bg-yellow-600 text-gray-900 p-8 rounded-md shadow-md w-full max-w-lg" data-netlify="true" name="reservation">
+      <input type="hidden" name="form-name" value="reservation" />
+
       <div class="mb-4">
-        <label for="startDate" class="block text-sm font-semibold mb-2 text-blue-900">Date de début:</label>
-        <input
-          type="date"
-          id="startDate"
-          name="startDate"
-          class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
-          min={today}
-          max={twoWeeksFromNow}
-        />
-      </div>
-  
-      <div class="mb-4">
-        <label for="dayNumber" class="block text-sm font-semibold mb-2 text-blue-900">Nombre de jours:</label>
-        <input
-          type="number"
-          id="dayNumber"
-          name="dayNumber"
-          class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
-          min="1"
-          value="1"
-        />
-      </div>
-  
-      <div class="mb-4">
-        <label for="name" class="block text-sm font-semibold mb-2 text-blue-900">Nom</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
-        />
+          <label for="email" class="block text-sm font-semibold mb-2 text-blue-900">Email*:</label>
+          <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+          />
       </div>
 
       <div class="mb-4">
-        <label class="block text-sm font-semibold mb-2 text-blue-900">Recevoir notre newsletter?</label>
+        <label for="mobile" class="block text-sm font-semibold mb-2 text-blue-900">Numéro de téléphone mobile:</label>
+        <input
+            type="tel"
+            id="mobile"
+            name="mobile"
+            required
+            pattern="^(0|\+33)[67]\d{8}$"
+            placeholder="06XXXXXXXX ou +336XXXXXXXX"
+            class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+        />
+    </div>
+
+      <div class="mb-4">
+          <label for="startDate" class="block text-sm font-semibold mb-2 text-blue-900">Date de début*:</label>
+          <input
+              type="date"
+              id="startDate"
+              name="startDate"
+              class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              min={today}
+              max={twoWeeksFromNow}
+          />
+      </div>
+
+      <div class="mb-4">
+          <label for="dayNumber" class="block text-sm font-semibold mb-2 text-blue-900">Nombre de jours*:</label>
+          <input
+              type="number"
+              id="dayNumber"
+              name="dayNumber"
+              class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              min="1"
+              value="1"
+          />
+      </div>
+
+      <div class="mb-4">
+          <label for="name" class="block text-sm font-semibold mb-2 text-blue-900">Nom*</label>
+          <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+          />
+      </div>
+
+      <div class="mb-4">
+          <label for="message" class="block text-sm font-semibold mb-2 text-blue-900">Message (optionnel):</label>
+          <textarea
+              id="message"
+              name="message"
+              class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+          ></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label for="newsletter_yes" class="block text-sm font-semibold mb-2 text-blue-900">Recevoir notre newsletter?</label>
         <div class="flex items-center">
-            <input 
-                type="radio" 
-                id="newsletter_yes" 
-                name="newsletter" 
-                value="yes"
-                required 
+            <input
+                type="radio"
+                id="newsletter_yes"
+                name="NewsLetterSub"
+                value="Oui"
+                required
                 class="mr-2"
             />
-            <label for="newsletter_yes" class="mr-4">Oui</label>
+            <label class="mr-4">Oui</label>
     
-            <input 
-                type="radio" 
-                id="newsletter_no" 
-                name="newsletter" 
-                value="no"
-                required 
+            <input
+                type="radio"
+                id="newsletter_no"
+                name="NewsLetterSub"
+                value="Non"
+                required
                 class="mr-2"
             />
             <label for="newsletter_no">Non</label>
         </div>
         <p class="text-xs text-gray-600 mt-2">
-          Votre adresse email sera uniquement utilisée pour vous envoyer notre newsletter et jamais partager. 
-          Pas de spam, juste des outils.
-      </p>
+            Votre adresse email sera uniquement utilisée pour vous envoyer notre newsletter et jamais partager.
+            Pas de spam, juste des outils.
+        </p>
     </div>
-  
+
       <input type="hidden" name="itemId" value={itemId || ""} />
       <input type="hidden" name="itemName" value={item.data.name || ""} />
-  
-      <button type="button" id="sendEmailButton" class="bg-blue-900 font-semibold text-yellow-600 p-3 rounded-md w-full hover:bg-blue-800">
-        Envoyer la réservation
+
+      <button type="submit" id="sendEmailButton" class="bg-blue-900 font-semibold text-yellow-600 p-3 rounded-md w-full hover:bg-blue-800">
+          Envoyer la réservation
       </button>
-    </form>
-  </div>
-
-<script>
-const sendEmailButton = document.getElementById("sendEmailButton");
-const contactForm = document.getElementById("contactForm");
-
-if (sendEmailButton && contactForm) {
-    sendEmailButton.addEventListener("click", (event) => {
-        event.preventDefault();
-
-        const name = contactForm.name.value;
-        const startDate = contactForm.startDate?.value;
-        const dayNumber = contactForm.dayNumber?.value;
-        const itemId = contactForm.itemId.value;
-        const itemName = contactForm.itemName.value;
-        const acceptNewsletter = contactForm.newsletter_yes.checked;
-
-        let body = `Nom: ${name}`;
-        if (startDate && dayNumber) {
-            body += `\nDate de début: ${startDate}\nNombre de jours: ${dayNumber}`;
-        }
-
-        if (acceptNewsletter === true) {
-            body += `\nJ'accepte de recevoir votre newsletter.`;
-        }
-
-        body += `\nItem ID: ${itemId}\nItem Name: ${itemName}`;
-        body += `\n-------------Ne rien modifier au dessus de cette ligne----------------`;
-        body += `\nMessage libre (optionnel):`;
-
-        const subject = `Demande de réservation pour ${itemName}`;
-        const mailtoLink = `mailto:baraoutils@gmail.com?subject=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`;
-
-        window.open(mailtoLink, "_blank");
-    });
-}
-</script>
+  </form>
+</div>
