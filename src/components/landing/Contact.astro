@@ -90,35 +90,6 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
       </div>
 
       <div class="mb-4">
-          <label class="block text-sm font-semibold mb-2 text-blue-900">Recevoir notre newsletter?</label>
-          <div class="flex items-center">
-              <input
-                  type="radio"
-                  id="newsletter_yes"
-                  name="NewsLetterSub"
-                  value="Oui"
-                  required
-                  class="mr-2"
-              />
-              <label for="newsletter_yes" class="mr-4">Oui</label>
-
-              <input
-                  type="radio"
-                  id="newsletter_no"
-                  name="NewsLetterSub"
-                  value="Non"
-                  required
-                  class="mr-2"
-              />
-              <label for="newsletter_no">Non</label>
-          </div>
-          <p class="text-xs text-gray-600 mt-2">
-              Votre adresse email sera uniquement utilisée pour vous envoyer notre newsletter et jamais partager.
-              Pas de spam, juste des outils.
-          </p>
-      </div>
-
-      <div class="mb-4">
           <label for="message" class="block text-sm font-semibold mb-2 text-blue-900">Message (optionnel):</label>
           <textarea
               id="message"
@@ -126,6 +97,35 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
               class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
           ></textarea>
       </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-semibold mb-2 text-blue-900">Recevoir notre newsletter?</label>
+        <div class="flex items-center">
+            <input
+                type="radio"
+                id="newsletter_yes"
+                name="NewsLetterSub"
+                value="Yes"
+                required
+                class="mr-2"
+            />
+            <label for="newsletter_yes" class="mr-4">Oui</label>
+    
+            <input
+                type="radio"
+                id="newsletter_no"
+                name="NewsLetterSub"
+                value="No"
+                required
+                class="mr-2"
+            />
+            <label for="newsletter_no">Non</label>
+        </div>
+        <p class="text-xs text-gray-600 mt-2">
+            Votre adresse email sera uniquement utilisée pour vous envoyer notre newsletter et jamais partager.
+            Pas de spam, juste des outils.
+        </p>
+    </div>
 
       <input type="hidden" name="itemId" value={itemId || ""} />
       <input type="hidden" name="itemName" value={item.data.name || ""} />
