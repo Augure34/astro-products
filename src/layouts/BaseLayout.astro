@@ -2,7 +2,7 @@
 import Carousel from "@/components/landing/Carousel.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/global/Footer.astro";
-import TagManager from "@/components/global/TagManager.astro";
+import TagManager from "@/components/global/TagManager";
 import CookieConsent from "@/components/global/CookieConsent";
 ---
 
@@ -12,7 +12,7 @@ import CookieConsent from "@/components/global/CookieConsent";
   </head>
 
   <body class="bg-blue-900">
-    <TagManager />
+    <TagManager client:load />
     <CookieConsent client:load />
     <slot />
     <Carousel></Carousel>

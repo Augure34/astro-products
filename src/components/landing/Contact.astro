@@ -1,12 +1,13 @@
 ---
 import { getCollection } from "astro:content";
+import PriceDisplay from "../global/priceCalculator";
 
 export interface Props {
     itemId: string;
 }
 
 const { itemId } = Astro.props;
-console.log(Astro.props);
+
 const collections = {
   Menuiserie: await getCollection("menuiserie"),
   Nettoyage: await getCollection("nettoyage"),
@@ -29,6 +30,7 @@ const today = new Date().toISOString().split("T")[0];
 const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
     .toISOString()
     .split("T")[0];
+    
 ---
 <div class="bg-gray-900 pt-8 pb-8 px-4 w-full flex flex-col items-center">
   <div class="bg-yellow-600 text-blue-900 text-center w-full max-w-lg p-4 mb-8 rounded-md shadow-md">
@@ -66,7 +68,7 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
             name="mobile"
             required
             pattern="^(0|\+33)[67]\d{8}$"
-            placeholder="06XXXXXXXX ou +336XXXXXXXX"
+            placeholder="06..."
             class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
         />
     </div>
@@ -84,16 +86,11 @@ const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
       </div>
 
       <div class="mb-4">
-          <label for="dayNumber" class="block text-sm font-semibold mb-2 text-blue-900">Nombre de jours*:</label>
-          <input
-              type="number"
-              id="dayNumber"
-              name="dayNumber"
-              class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
-              min="1"
-              value="1"
-          />
-      </div>
+        <label for="dayNumber" class="block text-sm font-semibold mb-2 text-blue-900">
+            Nombre de jours*:
+        </label>
+        <PriceDisplay initialDays={1} dailyPrice={item.data.price.daily} client:load/>
+    </div>
 
       <div class="mb-4">
           <label for="name" class="block text-sm font-semibold mb-2 text-blue-900">Nom*</label>

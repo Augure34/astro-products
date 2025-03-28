@@ -2,8 +2,8 @@
     "name": "Débroussailleuse",
     "description": "Liberté totale, batteries puissante, coupe nette et précise. Léger, maniable, idéal jardins, brousaille et allées. Silencieux",
     "price": {
-        "daily": 15.00,
-        "weekly": 60.00
+        "daily": 20.00,
+        "weekly": 80.00
     },
     "image": "/products/debroussailleuse.webp",
     "manufacturer": "Dolmar (Makita)",
