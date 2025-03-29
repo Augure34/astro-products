@@ -3,7 +3,7 @@ import { createSignal } from 'solid-js';
 export default function Counter(props) {
     const [count, setCount] = createSignal(props.initialDays);
 
-    const calculatePriceAndDiscount = (discountPercentage = 0.3) => {
+    const calculatePriceAndDiscount = (discountPercentage = 0.2) => {
         const basePrice = count() * props.dailyPrice;
         const discountedPrice = basePrice * (1 - discountPercentage);
         const roundedDiscountedPrice = Math.floor(discountedPrice);
