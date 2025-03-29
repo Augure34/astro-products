@@ -51,6 +51,6 @@ export const collections = {
   jardinage: jardinageCollection,
   nettoyage: nettoyageCollection,
   menuiserie: travailDuBoisCollection,
-  metalurgie: travailDuMetalCollection,
+  metallurgie: travailDuMetalCollection,
   bricolage: travauxGenerauxCollection
 };
