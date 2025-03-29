@@ -3,6 +3,7 @@ import Carousel from "@/components/landing/Carousel.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/global/Footer.astro";
 import CookieConsent from "@/components/global/CookieConsent";
+import Newsletter from "@/components/landing/Newsletter.astro";
 ---
 
 <html lang="fr">
@@ -22,7 +23,8 @@ import CookieConsent from "@/components/global/CookieConsent";
     </noscript>
     <CookieConsent client:load />
     <slot />
-    <Carousel></Carousel>
+    <Newsletter />
+    <Carousel />
     <Footer />
   </body>
 </html>
