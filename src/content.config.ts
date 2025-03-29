@@ -37,7 +37,7 @@ const travailDuBoisCollection = defineCollection({
 });
 
 const travailDuMetalCollection = defineCollection({
-  loader: glob({ pattern: '*.json', base: './products/Metalurgie' }),
+  loader: glob({ pattern: '*.json', base: './products/Metallurgie' }),
   schema: productSchema,
 });
 

@@ -1,7 +1,7 @@
 {
-  "$ref": "#/definitions/metalurgie",
+  "$ref": "#/definitions/metallurgie",
   "definitions": {
-    "metalurgie": {
+    "metallurgie": {
       "type": "object",
       "properties": {
         "name": {

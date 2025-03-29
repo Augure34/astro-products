@@ -12,10 +12,10 @@ export async function getStaticPaths() {
   const Nettoyage = await getCollection("nettoyage");
   const Jardinage = await getCollection("jardinage");
   const Bricolage = await getCollection("bricolage");
-  const Metalurgie = await getCollection("metalurgie");
+  const Metallurgie = await getCollection("metallurgie");
   const Divers = await getCollection("divers");
 
-  const allItems = [...Menuiserie, ...Nettoyage, ...Jardinage, ...Bricolage, ...Metalurgie, ...Divers];
+  const allItems = [...Menuiserie, ...Nettoyage, ...Jardinage, ...Bricolage, ...Metallurgie, ...Divers];
 
   return allItems.map((item) => ({
     params: { item: item.id },
