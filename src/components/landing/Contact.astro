@@ -9,12 +9,12 @@ export interface Props {
 const { itemId } = Astro.props;
 
 const collections = {
-  Menuiserie: await getCollection("menuiserie"),
-  Nettoyage: await getCollection("nettoyage"),
-  Jardinage: await getCollection("jardinage"),
-  Bricolage: await getCollection("bricolage"),
-  Metallurgie: await getCollection("metallurgie"),
-  Divers: await getCollection("divers"),
+    Menuiserie: await getCollection("menuiserie"),
+    Nettoyage: await getCollection("nettoyage"),
+    Jardinage: await getCollection("jardinage"),
+    Bricolage: await getCollection("bricolage"),
+    Metallurgie: await getCollection("metallurgie"),
+    Divers: await getCollection("divers"),
 };
 let item: any = null;
 if (itemId) {
@@ -25,127 +25,134 @@ if (itemId) {
         }
     }
 }
-
-const today = new Date().toISOString().split("T")[0];
-const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
-    .toISOString()
-    .split("T")[0];
-    
 ---
 <div class="bg-gray-900 pt-8 pb-8 px-4 w-full flex flex-col items-center">
-  <div class="bg-yellow-600 text-blue-900 text-center w-full max-w-lg p-4 mb-8 rounded-md shadow-md">
-      <h2 class="text-2xl">
-          Demande de réservation
-      </h2>
-      <h2 class="text-2xl font-semibold">
-          {item.data.name}
-      </h2>
-  </div>
-
-  <form id="contactForm" class="bg-yellow-600 text-gray-900 p-8 rounded-md shadow-md w-full max-w-lg" data-netlify="true" name="reservation" action="/success" method="POST" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="reservation" />
-      <p class="hidden">
-        <label>
-          Don't fill this out: <input name="bot-field" />
-        </label>
-      </p>
-      <div class="mb-4">
-          <label for="email" class="block text-sm font-semibold mb-2 text-blue-900">Email*:</label>
-          <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
-          />
-      </div>
-
-      <div class="mb-4">
-        <label for="mobile" class="block text-sm font-semibold mb-2 text-blue-900">Numéro de téléphone mobile:</label>
-        <input
-            type="tel"
-            id="mobile"
-            name="mobile"
-            required
-            pattern="^(0|\+33)[67]\d{8}$"
-            placeholder="06..."
-            class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
-        />
+    <div class="bg-yellow-600 text-blue-900 text-center w-full max-w-lg p-4 mb-8 rounded-md shadow-md">
+        <h2 class="text-2xl">
+            Demande de réservation
+        </h2>
+        <h2 class="text-2xl font-semibold">
+            {item.data.name}
+        </h2>
     </div>
 
-      <div class="mb-4">
-          <label for="startDate" class="block text-sm font-semibold mb-2 text-blue-900">Date de début*:</label>
-          <input
-              type="date"
-              id="startDate"
-              name="startDate"
-              class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
-              min={today}
-              max={twoWeeksFromNow}
-          />
-      </div>
-
-      <div class="mb-4">
-        <label for="dayNumber" class="block text-sm font-semibold mb-2 text-blue-900">
-            Nombre de jours*:
-        </label>
-        <PriceDisplay initialDays={1} dailyPrice={item.data.price.daily} client:load/>
-    </div>
-
-      <div class="mb-4">
-          <label for="name" class="block text-sm font-semibold mb-2 text-blue-900">Nom*</label>
-          <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
-          />
-      </div>
-
-      <div class="mb-4">
-          <label for="message" class="block text-sm font-semibold mb-2 text-blue-900">Message (optionnel):</label>
-          <textarea
-              id="message"
-              name="message"
-              class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
-          ></textarea>
-      </div>
-
-      <div class="mb-4">
-        <label for="newsletter_yes" class="block text-sm font-semibold mb-2 text-blue-900">Recevoir notre newsletter?</label>
-        <div class="flex items-center">
-            <input
-                type="radio"
-                id="newsletter_yes"
-                name="NewsLetterSub"
-                value="Oui"
-                required
-                class="mr-2"
-            />
-            <label class="mr-4">Oui</label>
-    
-            <input
-                type="radio"
-                id="newsletter_no"
-                name="NewsLetterSub"
-                value="Non"
-                required
-                class="mr-2"
-            />
-            <label for="newsletter_no">Non</label>
-        </div>
-        <p class="text-xs text-gray-600 mt-2">
-            Votre adresse email, c'est sacré! On ne l'utilise que pour notre newsletter, promis.
-            Pas de spam, que des outils, des astuces et un peu d'humour.
+    <form id="contactForm" class="bg-yellow-600 text-gray-900 p-8 rounded-md shadow-md w-full max-w-lg" data-netlify="true" name="reservation" action="/success" method="POST" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="reservation" />
+        <p class="hidden">
+            <label>
+                Don't fill this out: <input name="bot-field" />
+            </label>
         </p>
-    </div>
+        <div class="mb-4">
+            <label for="email" class="block text-sm font-semibold mb-2 text-blue-900">Email*:</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            />
+        </div>
 
-      <input type="hidden" name="itemId" value={itemId || ""} />
-      <input type="hidden" name="itemName" value={item.data.name || ""} />
+        <div class="mb-4">
+            <label for="mobile" class="block text-sm font-semibold mb-2 text-blue-900">Numéro de téléphone mobile:</label>
+            <input
+                type="tel"
+                id="mobile"
+                name="mobile"
+                required
+                pattern="^(0|\+33)[67]\d{8}$"
+                placeholder="06..."
+                class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            />
+        </div>
 
-      <button type="submit" id="sendEmailButton" class="bg-blue-900 font-semibold text-yellow-600 p-3 rounded-md w-full hover:bg-blue-800">
-          Envoyer la réservation
-      </button>
-  </form>
+        <div class="mb-4">
+            <label for="startDate" class="block text-sm font-semibold mb-2 text-blue-900">Date de début*:</label>
+            <input
+                type="date"
+                id="startDate"
+                name="startDate"
+                class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            />
+        </div>
+
+        <div class="mb-4">
+            <label for="dayNumber" class="block text-sm font-semibold mb-2 text-blue-900">
+                Nombre de jours*:
+            </label>
+            <PriceDisplay initialDays={1} dailyPrice={item.data.price.daily} client:load/>
+        </div>
+
+        <div class="mb-4">
+            <label for="name" class="block text-sm font-semibold mb-2 text-blue-900">Nom*</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            />
+        </div>
+
+        <div class="mb-4">
+            <label for="message" class="block text-sm font-semibold mb-2 text-blue-900">Message (optionnel):</label>
+            <textarea
+                id="message"
+                name="message"
+                class="w-full p-2 border border-gray-900 bg-gray-900 text-white rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            ></textarea>
+        </div>
+
+        <div class="mb-4">
+            <label for="newsletter_yes" class="block text-sm font-semibold mb-2 text-blue-900">Recevoir notre newsletter?</label>
+            <div class="flex items-center">
+                <input
+                    type="radio"
+                    id="newsletter_yes"
+                    name="NewsLetterSub"
+                    value="Oui"
+                    required
+                    class="mr-2"
+                />
+                <label class="mr-4">Oui</label>
+
+                <input
+                    type="radio"
+                    id="newsletter_no"
+                    name="NewsLetterSub"
+                    value="Non"
+                    required
+                    class="mr-2"
+                />
+                <label for="newsletter_no">Non</label>
+            </div>
+            <p class="text-xs text-gray-600 mt-2">
+                Votre adresse email, c'est sacré! On ne l'utilise que pour notre newsletter, promis.
+                Pas de spam, que des outils, des astuces et un peu d'humour.
+            </p>
+        </div>
+
+        <input type="hidden" name="itemId" value={itemId || ""} />
+        <input type="hidden" name="itemName" value={item.data.name || ""} />
+
+        <button type="submit" id="sendEmailButton" class="bg-blue-900 font-semibold text-yellow-600 p-3 rounded-md w-full hover:bg-blue-800">
+            Envoyer la réservation
+        </button>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const today = new Date().toISOString().split("T")[0];
+            const twoWeeksFromNow = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000)
+                .toISOString()
+                .split("T")[0];
+
+            const startDateInput = document.getElementById("startDate");
+            if (startDateInput) {
+                startDateInput.min = today;
+                startDateInput.max = twoWeeksFromNow;
+            }
+        });
+    </script>
 </div>
