@@ -36,11 +36,6 @@ const travailDuBoisCollection = defineCollection({
   schema: productSchema,
 });
 
-const travailDuMetalCollection = defineCollection({
-  loader: glob({ pattern: '*.json', base: './products/Metallurgie' }),
-  schema: productSchema,
-});
-
 const travauxGenerauxCollection = defineCollection({
   loader: glob({ pattern: '*.json', base: './products/Bricolage' }),
   schema: productSchema,
@@ -51,6 +46,5 @@ export const collections = {
   jardinage: jardinageCollection,
   nettoyage: nettoyageCollection,
   menuiserie: travailDuBoisCollection,
-  metallurgie: travailDuMetalCollection,
   bricolage: travauxGenerauxCollection
 };
