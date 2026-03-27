@@ -2,8 +2,8 @@
     "name": "Shampouineuse",
     "description": "Pour un nettoyage en profondeur: ciblé, puissant, élimine les odeurs et les taches tenaces sur tous tissus et tapis.",
     "price": {
-        "daily": 25.00,
-        "weekly": 100.00
+        "daily": 20.00,
+        "weekly": 85.00
     },
     "image": "/products/shampouineuse.webp",
     "manufacturer": "Karcher",
