@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { ToCacheBustable } from "../global/CacheBuster.astro";
+import { ToCacheBustable } from "../global/cacheBuster";
 Astro.response.headers.set(
   "Cache-Control",
   "public, max-age=31536000, immutable",

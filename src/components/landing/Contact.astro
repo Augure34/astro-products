@@ -148,7 +148,7 @@ if (itemId) {
                 .split("T")[0];
 
             const startDateInput = document.getElementById("startDate");
-            if (startDateInput) {
+            if (startDateInput instanceof HTMLInputElement) {
                 startDateInput.min = today;
                 startDateInput.max = twoWeeksFromNow;
             }

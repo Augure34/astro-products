@@ -1,5 +1,5 @@
 import { Component, createSignal, createEffect, Show } from "solid-js";
-import { ToCacheBustable } from "./CacheBuster.astro";
+import { ToCacheBustable } from "./cacheBuster";
 
 // tell typescript that this function is defined in the global scope
 // they are defined in the <head> per the previous instructions
